@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb</title>
+    <style>
+        img, button {                        /*centre the bulb*/
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button {
+            font-size: large;
+            margin-top: 20px;
+            padding: 9px;
+            border-radius: 6px;          
+        }
+    </style>
+</head>
+
+<body style="background-color: black ;">
+    <img id="bulbimg" src="bulb.png"></img>
+    <button id="button">Turn On</button>
+    <script>
+        let bulbimg=document.getElementById("bulbimg");
+        let button=document.getElementById("button");
+        button.addEventListener('click',toggleBulb);
+        
+        function toggleBulb(){
+            if(button.textContent.includes('On')){
+                bulbimg.src="bulbon.png";
+                button.textContent="Turn Off";
+            }
+            else{
+                bulbimg.src="bulb.png";
+                button.textContent="Turn On";
+            }
+        }
+    </script>
+</body>
+
+</html>
